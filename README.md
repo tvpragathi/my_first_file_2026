@@ -25,17 +25,23 @@
 
 ## Issues Faced & Solutions
 
-### Issue: Claude Code and Codex login failed in terminal
-- Cause: Authentication failed in terminal due to environment configuration (PATH / Node.js setup) and incomplete CLI initialization.
+### Issue 1: Extension login failed in terminal (Claude Code & Codex)
+- Cause: Node.js was not properly detected due to PATH environment variable misconfiguration.
 - Solution:
-  - Ensured Node.js was properly installed and added to system PATH
-  - Restarted Cursor IDE after environment variable changes
-  - Reopened terminal and retried login for Claude Code and Codex
-  - Login succeeded after environment refresh
+  - Installed Node.js and configured PATH correctly
+  - Restarted Cursor IDE
+  - Retried login successfully after environment refresh
 
-### Issue: Unable to push to GitHub
-- Cause: Git branch or commit configuration issue (no initial commit / branch mismatch).
+### Issue 2: Git push error (src refspec main does not match any)
+- Cause: No initial commit was created in the repository.
 - Solution:
-  - Added and committed files using Git
-  - Ensured correct branch name (`main`)
-  - Successfully pushed repository to GitHu
+  - Added project files using `git add .`
+  - Created first commit using `git commit -m "Initial commit"`
+  - Pushed successfully using `git push -u origin main`
+
+### Issue 3: Pathspec error while adding files
+- Cause: Files were not present in the correct directory or not created properly.
+- Solution:
+  - Created/added files inside the correct project folder
+  - Verified using `git status`
+  - Added files again successfully using `git add .`
